@@ -30,6 +30,7 @@ function LaunchLog() {
                 mission_name,
                 rocket,
                 launch_success,
+                upcoming,
               },
               index
             ) => {
@@ -42,6 +43,7 @@ function LaunchLog() {
                   mission_name={mission_name}
                   rocket={rocket}
                   launch_success={launch_success}
+                  upcoming={upcoming}
                 />
               );
             }

@@ -17,8 +17,6 @@
       background: #f4f5f7;
       text-align: center;
     }
-    tr {
-    }
     td {
       height: 50px;
       color: #1f2937;
@@ -37,6 +35,13 @@
       height: 21px;
       border: none;
       color: #03543f;
+    }
+    .upcoming {
+      background: #fef3c7;
+      border-radius: 20px;
+      height: 21px;
+      border: none;
+      color: #92400f;
     }
     .failed {
       background: #fde2e1;

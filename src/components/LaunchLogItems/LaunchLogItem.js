@@ -5,6 +5,7 @@ function LaunchLogItem({
   mission_name,
   rocket,
   launch_success,
+  upcoming,
 }) {
   const date = new Intl.DateTimeFormat("default", {
     dateStyle: "long",
@@ -20,13 +21,13 @@ function LaunchLogItem({
       <td>{rocket.second_stage.payloads[0].orbit}</td>
       <td className="status">
         {launch_success ? (
-          <button className={launch_success ? "success" : "failed"}>
-            Success
-          </button>
-        ) : (
+          <button className="success">Success</button>
+        ) : !upcoming ? (
           <button className={launch_success ? "success" : "failed"}>
             Failed
           </button>
+        ) : (
+          <button className="upcoming">Upcoming</button>
         )}
       </td>
       <td>{rocket.rocket_name}</td>
