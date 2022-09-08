@@ -1,5 +1,6 @@
 .pagination {
   align-self: center;
+  font-size: 12px;
   &__container {
     margin: 100px 0;
     display: flex;
@@ -26,7 +27,7 @@
       }
 
       &:hover {
-        background: rgba($color: #000000, $alpha: 0.075);
+        background: rgba($color: #f4f5f7, $alpha: 0.75);
       }
     }
   }

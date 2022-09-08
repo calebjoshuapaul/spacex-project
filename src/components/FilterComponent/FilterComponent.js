@@ -34,6 +34,19 @@ function FilterComponent() {
     },
   };
 
+  const handleRangeSubmit = () => {
+    const endDate = new Date(duration[0].endDate);
+    const startDate = new Date(duration[0].startDate);
+    console.log("clicked");
+    (async () => {
+      await fetch(
+        `https://api.spacexdata.com/v3/launches?start=${startDate.getFullYear()}-${startDate.getMonth()}-${startDate.getDate()}&end=${endDate.getFullYear()}-${endDate.getMonth()}-${startDate.getDate()}`
+      )
+        .then((res) => res.json())
+        .then((data) => setFilteredData(data));
+    })();
+  };
+
   const handleLaunchOptions = () => {
     setLaunchOption(document.getElementById("launchOptions").value);
   };
@@ -72,21 +85,29 @@ function FilterComponent() {
   return (
     <div className="filterComponent">
       <div className="filterByTime">
-        <button onClick={() => setIsOpen(!modalIsOpen)}>click me</button>
+        <button className="range__btn" onClick={() => setIsOpen(!modalIsOpen)}>
+          Adjust Range
+        </button>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={() => setIsOpen(!modalIsOpen)}
           contentLabel="Date Picker Modal"
           style={customStyles}
+          appElement={document.querySelector(".filterComponent")}
         >
-          <DateRangePicker
-            months={1}
-            ranges={duration}
-            direction="horizontal"
-            showSelectionPreview={true}
-            moveRangeOnFirstSelection={false}
-            onChange={(duration) => setDuration([duration.selection])}
-          />
+          <div className="modal__container">
+            <DateRangePicker
+              months={1}
+              ranges={duration}
+              direction="horizontal"
+              showSelectionPreview={true}
+              moveRangeOnFirstSelection={false}
+              onChange={(duration) => setDuration([duration.selection])}
+            />
+            <button className="submitRange__btn" onClick={handleRangeSubmit}>
+              SEARCH
+            </button>
+          </div>
         </Modal>
       </div>
 

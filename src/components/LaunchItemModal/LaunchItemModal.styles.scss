@@ -31,9 +31,10 @@
         height: 15px;
         padding: 2px;
         margin-right: 5px;
+        border-radius: 6px;
 
         &:hover {
-          background: #fde2e1;
+          background: rgba($color: #f4f5f7, $alpha: 1);
         }
       }
     }
@@ -49,15 +50,21 @@
       font-size: 14px;
       line-height: 24px;
     }
+    a {
+      text-decoration: none;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
       tr {
-        height: 40px;
+        height: 45px;
         border-bottom: 1px solid #e4e4e7;
         font-size: 14px;
         font-weight: 400;
+        color: #1f2937;
+
         td:nth-child(1) {
+          color: #4b5563;
           font-weight: 500;
         }
       }

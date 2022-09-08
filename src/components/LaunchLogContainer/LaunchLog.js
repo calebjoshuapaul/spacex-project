@@ -21,9 +21,16 @@ function LaunchLog() {
           </tr>
         </thead>
         <tbody className="launchLog__tableBody">
-          {perPageLaunchData.map((data, index) => {
-            return <LaunchLogItem key={index} data={data} />;
-          })}
+          {!perPageLaunchData.length ? (
+            <tr>
+              <td colSpan={7}>No results found for the specified filter</td>
+            </tr>
+          ) : (
+            perPageLaunchData.map((data, index) => {
+              return <LaunchLogItem key={index} data={data} />;
+            })
+          )}
+          {}
         </tbody>
       </table>
     </div>

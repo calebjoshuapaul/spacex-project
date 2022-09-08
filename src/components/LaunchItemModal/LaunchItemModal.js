@@ -4,7 +4,6 @@ import YouTubeLogo from "../../assets/YouTubeLogo.png";
 import "./LaunchItemModal.styles.scss";
 
 function LaunchItemModal({ data }) {
-  console.log(data);
   return (
     <div className="launchModal">
       <div className="launchModal__header">
@@ -31,10 +30,15 @@ function LaunchItemModal({ data }) {
         )}
       </div>
       <div className="launchModal__body">
-        <p>
-          {data.details}
-          <a href={data.links.wikipedia}>Wikipedia</a>
-        </p>
+        {data.details ? (
+          <p>
+            {data.details}. <a href={data.links.wikipedia}>Wikipedia</a>
+          </p>
+        ) : (
+          <p>
+            <a href={data.links.wikipedia}>Wikipedia</a>
+          </p>
+        )}
         <div className="launchModal__bodyInfo">
           <table>
             <tbody>

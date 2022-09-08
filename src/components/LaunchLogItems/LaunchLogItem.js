@@ -15,7 +15,7 @@ function LaunchLogItem({ data }) {
       background: "#FFF",
     },
     overlay: {
-      background: "rgba(0,0,0,0.1)",
+      backgroundColor: "rgba(0,0,0,0.1)",
     },
   };
   const date = new Intl.DateTimeFormat("default", {

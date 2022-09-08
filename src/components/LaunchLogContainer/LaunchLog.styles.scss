@@ -8,6 +8,7 @@
 
   &__table {
     width: 100%;
+    min-height: 500px;
     border: 1px solid transparent;
     border-collapse: collapse;
     border-spacing: 20px;
@@ -18,10 +19,13 @@
       text-align: center;
       & > tr {
         background: fixed !important;
+        cursor: default !important;
       }
     }
     tr {
       cursor: pointer;
+      font-size: 12px;
+      line-height: 18px;
       &:hover {
         background: rgba($color: #f4f5f7, $alpha: 0.75);
       }
