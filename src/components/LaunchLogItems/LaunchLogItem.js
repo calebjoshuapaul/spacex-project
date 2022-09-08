@@ -31,7 +31,7 @@ function LaunchLogItem({ data }) {
         style={customStyles}
         appElement={document.querySelector("tr")}
       >
-        <LaunchItemModal data={data} />
+        <LaunchItemModal data={data} launchDate={date} />
       </Modal>
       <tr onClick={() => setIsOpen(!modalIsOpen)}>
         <td>

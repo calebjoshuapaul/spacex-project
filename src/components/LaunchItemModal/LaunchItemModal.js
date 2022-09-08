@@ -3,7 +3,7 @@ import WikipediaLogo from "../../assets/WikipediaLogo.png";
 import YouTubeLogo from "../../assets/YouTubeLogo.png";
 import "./LaunchItemModal.styles.scss";
 
-function LaunchItemModal({ data }) {
+function LaunchItemModal({ data, launchDate }) {
   return (
     <div className="launchModal">
       <div className="launchModal__header">
@@ -76,7 +76,7 @@ function LaunchItemModal({ data }) {
               </tr>
               <tr>
                 <td>Launch Date</td>
-                <td>{data.flight_number}</td>
+                <td>{launchDate}</td>
               </tr>
               <tr>
                 <td>Payload Type</td>

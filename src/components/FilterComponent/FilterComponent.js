@@ -14,7 +14,7 @@ function FilterComponent() {
   const [duration, setDuration] = useState([
     {
       startDate: new Date(),
-      endDate: addDays(new Date(), 0),
+      endDate: addDays(new Date(), 7),
       key: "selection",
     },
   ]);
@@ -35,12 +35,15 @@ function FilterComponent() {
   };
 
   const handleRangeSubmit = () => {
-    const endDate = new Date(duration[0].endDate);
-    const startDate = new Date(duration[0].startDate);
-    console.log("clicked");
+    const endDate = duration[0].endDate;
+    const startDate = duration[0].startDate;
     (async () => {
       await fetch(
-        `https://api.spacexdata.com/v3/launches?start=${startDate.getFullYear()}-${startDate.getMonth()}-${startDate.getDate()}&end=${endDate.getFullYear()}-${endDate.getMonth()}-${startDate.getDate()}`
+        `https://api.spacexdata.com/v3/launches?start=${startDate.getFullYear()}-${
+          startDate.getMonth() + 1
+        }-${startDate.getUTCDate()}&end=${endDate.getFullYear()}-${
+          endDate.getMonth() + 1
+        }-${endDate.getUTCDate()}`
       )
         .then((res) => res.json())
         .then((data) => setFilteredData(data));
