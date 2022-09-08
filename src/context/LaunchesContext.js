@@ -44,10 +44,10 @@ export const LaunchesProvider = ({ children }) => {
 
   useEffect(() => {
     if (currentPage === 1) {
-      setPerPageLaunchData(filteredData.slice(0, currentPage * 20));
+      setPerPageLaunchData(filteredData.slice(0, currentPage * 12));
     } else {
       setPerPageLaunchData(
-        filteredData.slice(currentPage * 20 - 20, currentPage * 20)
+        filteredData.slice(currentPage * 12 - 12, currentPage * 12)
       );
     }
   }, [filteredData, currentPage]);

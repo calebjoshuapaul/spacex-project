@@ -21,33 +21,9 @@ function LaunchLog() {
           </tr>
         </thead>
         <tbody className="launchLog__tableBody">
-          {perPageLaunchData.map(
-            (
-              {
-                flight_number,
-                launch_date_utc,
-                launch_site,
-                mission_name,
-                rocket,
-                launch_success,
-                upcoming,
-              },
-              index
-            ) => {
-              return (
-                <LaunchLogItem
-                  key={index}
-                  flight_number={flight_number}
-                  launch_date_utc={launch_date_utc}
-                  launch_site={launch_site}
-                  mission_name={mission_name}
-                  rocket={rocket}
-                  launch_success={launch_success}
-                  upcoming={upcoming}
-                />
-              );
-            }
-          )}
+          {perPageLaunchData.map((data, index) => {
+            return <LaunchLogItem key={index} data={data} />;
+          })}
         </tbody>
       </table>
     </div>

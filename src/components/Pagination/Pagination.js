@@ -6,7 +6,7 @@ function Pagination() {
   const { currentPage, setCurrentPage, filteredData } =
     useContext(LaunchesContext);
 
-  const paginationRangeLength = Math.ceil(filteredData.length / 20);
+  const paginationRangeLength = Math.ceil(filteredData.length / 12);
   const paginationRangeArray = (() => {
     let i = 1;
     const result = [];

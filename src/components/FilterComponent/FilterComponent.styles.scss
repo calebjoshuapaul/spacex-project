@@ -1,0 +1,16 @@
+.filterComponent {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+
+  select {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+    option:hover {
+      background-color: #f4f5f7;
+    }
+  }
+}
