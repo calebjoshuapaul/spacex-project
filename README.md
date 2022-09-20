@@ -10,4 +10,4 @@
   - GraphQL
   - SASS
 
-### This web app lets the user view the launch log of SpaceX Sattelites, To install and run on your local machine fork this repository, clone and then run <code>npm install</code>, to install all the dependecies.
+### This web app lets the user view the launch log of SpaceX Sattelites, sort upcoming, successfull or failed launches and also to search launches between a set range. Click on a pariticular launch to view more details of the launch. To install and run on your local machine fork this repository, clone and then run <code>npm install</code>, to install all the dependecies.
